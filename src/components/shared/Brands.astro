@@ -1,0 +1,106 @@
+
+  <section class="brands section" data-cues="zoomIn">
+    <div class="inner-container">
+      <div class="marquee">
+        <div class="marquee-block">
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+        </div>
+        <div class="marquee-block">
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+          <!-- content-box -->
+          <a href="#" class="content-box">
+            <img src="/assets/brand.svg" alt="Logo de la marca" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<style>
+  .brands {
+    position: relative;
+    background: var(--color-bg);
+    z-index: 1;
+    padding: 40px 0;
+    margin-top: 4rem;
+  }
+  .inner-container {
+    max-width: 1812px;
+    margin: 0 auto;
+  }
+  .marquee {
+    position: relative;
+    --duration: 10s;
+    --gap: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    gap: var(--gap);
+  }
+  .marquee-block {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 87%;
+    -webkit-animation: scroll var(--duration) linear infinite;
+    animation: scroll var(--duration) linear infinite;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-100% - 1rem));
+    }
+  }
+ 
+</style>

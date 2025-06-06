@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* Tipografía */
+  --font-family: "Poppins", sans-serif;
+
+  /* Escala de tipografía */
+  --font-xs: 0.875rem; /* 14px */
+  --font-sm: 1rem; /* 16px */
+  --font-md: 1.125rem; /* 18px */
+  --font-lg: 1.25rem; /* 20px */
+  --font-xl: 1.5rem; /* 24px */
+  --font-2xl: 2rem; /* 32px */
+  --font-3xl: 2.5rem; /* 40px */
+  --font-4xl: 3rem; /* 48px */
+
+  /* Espaciado */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 1.5rem; /* 24px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 3rem; /* 48px */
+
+  /* Colores base (puedes adaptar según tu marca) */
+  --color-bg: #ffffff;
+  --color-bg2: #d7f5dc;
+  --color-text: #374151;
+  --color-primary: #49af45;
+  --color-secondary: #d97706;
+  --color-footer: #065f46;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-sm);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* Tipografía */
+h1 {
+  font-size: var(--font-2xl);
+  font-weight: bold;
+  margin-bottom: var(--space-sm);
+}
+h2 {
+  font-size: var(--font-xl);
+  font-weight: bold;
+  margin-bottom: var(--space-xs);
+}
+h3 {
+  font-size: var(--font-lg);
+  font-weight: bold;
+}
+p {
+  font-size: var(--font-md);
+  margin-bottom: var(--space-sm);
+}
+.section__title {
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+/* Botones */
+.button {
+  font-size: var(--font-sm);
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.button:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Contenedor */
+/* .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-sm);
+} */
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin-inline: 1.5rem;
+  margin: auto;
+}
+
+/* Secciones */
+.section {
+  padding-block: 5rem 5rem;
+}
+section[id] {
+  scroll-margin-top: 48px; /* ajusta según el alto de tu header */
+}
+
+/* main */
+main {
+  overflow: hidden; /*For animation*/
+}
+
+/* Responsive: tablet */
+@media (min-width: 641px) {
+  h1 {
+    font-size: var(--font-3xl);
+  }
+  h2 {
+    font-size: var(--font-2xl);
+  }
+  p {
+    font-size: var(--font-md);
+  }
+  .button {
+    font-size: var(--font-md);
+  }
+}
+
+/* Responsive: desktop */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: var(--font-4xl);
+  }
+  h2 {
+    font-size: var(--font-3xl);
+  }
+  p {
+    font-size: var(--font-md);
+  }
+}
+
+/*iconos css*/
+
+/*open menu   */
+.uil--bars {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2m18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2m0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* close menu */
+.iconamoon--close-bold {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='m7 7l10 10M7 17L17 7'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}

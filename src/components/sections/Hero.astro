@@ -1,0 +1,91 @@
+---
+import Brands from "../shared/Brands.astro";
+---
+
+<section id="home" class="home section">
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero">
+        <h1 class="hero__title">Jóvenes defendiendo la vida de la Amazonía</h1>
+        <p class="hero__subtitle">
+          Desde el corazón del Alto Mayo, unimos nuestras voces y acciones para
+          proteger el bosque que nos da vida.
+        </p>
+
+        <div class="hero__buttons">
+          <a href="#" class="button">ÚNETE AL CAMBIO</a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <img
+          class="hero__image--img img1"
+          src="https://placehold.co/600x400"
+          alt="hero-image"
+        />
+        <img
+          class="hero__image--img img2"
+          src="https://placehold.co/600x400"
+          alt="hero-image"
+        />
+        <img
+          class="hero__image--img img3"
+          src="https://placehold.co/600x400"
+          alt="hero-image"
+        />
+      </div>
+    </div>
+  </div>
+  <Brands />
+</section>
+
+<style>
+  .home {
+    background-color: var(--color-bg2);
+    padding-bottom: 0;
+  }
+  .hero__content {
+    display: grid;
+    gap: 2rem;
+  }
+  .hero__image {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    aspect-ratio: 3 / 2;
+  }
+  .hero__image--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  .img1 {
+    grid-row: span 4 / span 4;
+  }
+  .img2 {
+    grid-row: span 2 / span 2;
+  }
+  .img3 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
+
+  .hero__buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .home {
+      padding-top: 8rem;
+      padding-bottom: 0;
+    }
+    .hero__content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+</style>

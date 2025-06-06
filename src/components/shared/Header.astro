@@ -1,0 +1,191 @@
+<!--==================== HEADER ====================-->
+<header class="header" id="header">
+  <nav class="nav container">
+    <a href="#" class="nav__logo"> Red Amazonia Libre </a>
+
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="/#home" class="nav__link ">Inicio</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/#about" class="nav__link">Sobre nosotros </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/#causes" class="nav__link">Nuestras causas</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/unete" class="nav__link">Únete</a>
+        </li>
+      </ul>
+
+      <!-- CLOSE BUTTON -->
+      <button class="nav__close" id="nav-close">
+        <span class="iconamoon--close-bold"></span>
+      </button>
+    </div>
+
+    <!-- TOGGLE BUTTON -->
+    <button class="nav__toggle" id="nav-toggle">
+      <span class="uil--bars"></span>
+    </button>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 100;
+  }
+  .nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+  }
+  .nav__logo {
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+  @media (max-width: 1150px) {
+    .nav__menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100dvh;
+      background-color: var(--color-footer) opacity(0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 6rem 3rem;
+      z-index: 100;
+
+      transition: right 0.4s ease-in-out;
+    }
+  }
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+  .nav__link {
+    color: var(--color-text);
+    font-size: var(--font-sm);
+    font-weight: bold;
+    transition: color 0.4s ease-in-out;
+  }
+  .nav__link:hover {
+    color: var(--color-primary);
+  }
+  /* Active link */
+  .active-link {
+    color: var(--color-primary);
+  }
+  .nav__close,
+  .nav__toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    font-size: var(--font-lg);
+  }
+  .nav__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+  .show__menu {
+    right: 0;
+  }
+
+  /* Add blur header */
+  .blur-header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 100%);
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  @media (min-width: 1150px) {
+    .nav__list {
+      flex-direction: row;
+      gap: 3rem;
+    }
+    .nav__close,
+    .nav__toggle {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const navMenu = document.getElementById("nav-menu") as HTMLElement;
+  const navToggle = document.getElementById("nav-toggle") as HTMLElement;
+  const navClose = document.getElementById("nav-close") as HTMLElement;
+
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.add("show__menu");
+  });
+
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove("show__menu");
+  });
+
+  /*=============== REMOVE MENU MOBILE ===============*/
+  const navLink = document.querySelectorAll(
+    ".nav__link"
+  ) as NodeListOf<HTMLElement>;
+
+  const linkAction = () => {
+    const navMenu = document.getElementById("nav-menu") as HTMLElement;
+    // When we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove("show__menu");
+  };
+
+  navLink.forEach((link) => link.addEventListener("click", linkAction));
+
+  /*=============== ADD BLUR HEADER ===============*/
+  const blurHeader = () => {
+    const header = document.getElementById("header") as HTMLElement;
+    // Add a class if the bottom offset is greater than 50 of the viewport
+    window.scrollY >= 50
+      ? header.classList.add("blur-header")
+      : header.classList.remove("blur-header");
+  };
+  window.addEventListener("scroll", blurHeader);
+
+  /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+  // const sections = document.querySelectorAll("section[id]") as NodeListOf<HTMLElement>;
+
+  // const scrollActive = () => {
+  //   const scrollDown = window.scrollY;
+
+  //   sections.forEach((current) => {
+  //     const sectionHeight = current.offsetHeight,
+  //       sectionTop = current.offsetTop - 58,
+  //       sectionId = current.getAttribute("id") as string,
+  //       sectionsClass = document.querySelector(".nav__menu a[href*=" + sectionId + "]") as HTMLElement;
+
+
+        
+  //     if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+  //       sectionsClass.classList.add("active-link");
+  //     } else {
+  //       sectionsClass.classList.remove("active-link");
+  //     }
+  //   });
+  // };
+  // window.addEventListener("scroll", scrollActive);
+</script>

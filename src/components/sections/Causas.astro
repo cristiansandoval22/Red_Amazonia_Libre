@@ -1,0 +1,78 @@
+---
+import Card from "../shared/Card.astro";
+import Three from "../ui/icons/Three.astro";
+import Libro from "../ui/icons/Libro.astro";
+import Libertad from "../ui/icons/Libertad.astro";
+import Campain from "../ui/icons/Campain.astro";
+---
+
+<section id="causes" class="causes section">
+  <div class="causes__content container">
+    <h2 class="causes__title">Nuestras causas</h2>
+    <p class="causes__description">
+      Trabajamos en múltiples frentes para proteger y preservar la Amazonía
+    </p>
+
+    <div class="cards">
+      <Card
+        title="Reforestación"
+        description="Plantamos árboles nativos y restauramos ecosistemas degradados para recuperar la biodiversidad amazónica."
+        colorClass="green"
+      >
+        <Three slot="icon" />
+      </Card>
+
+      <Card
+        title="Educación Ambiental"
+        description="Desarrollamos programas educativos para concientizar sobre la importancia de la conservación amazónica."
+        colorClass="orange"
+      >
+        <Libro slot="icon" />
+      </Card>
+
+      <Card
+        title="Defensa Legal"
+        description="Apoyamos legalmente a comunidades indígenas en la protección de sus territorios ancestrales."
+        colorClass="blue"
+      >
+        <Libertad slot="icon" />
+      </Card>
+      <Card
+        title="Campañas Juveniles"
+        description="Organizamos movilizaciones y campañas de sensibilización lideradas por jóvenes de toda la región."
+        colorClass="purple"
+      >
+        <Campain slot="icon" />
+      </Card>
+    </div>
+  </div>
+</section>
+
+<style>
+  .causes {
+    background-image: url("/assets/testi-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .causes__title {
+    font-size: var(--font-2xl);
+    color: var(--color-primary);
+    text-align: center;
+  }
+  .causes__description {
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .cards {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+// src/components/Card.astro
+
+const { title, description, colorClass } = Astro.props;
+---
+
+<div class="card-container">
+  <div class={`card-content ${colorClass}`}>
+    <div class="icon-container">
+      <slot name="icon" />
+    </div>
+    <h3 class="title">{title}</h3>
+    <p class="description">{description}</p>
+  </div>
+</div>
+
+<style>
+  .card-container {
+    padding: 1rem;
+  }
+
+  .card-content {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  .icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .title{
+    text-align: center;
+  }
+
+  .title {
+    font-size: var(--font-md);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: var(--font-sm);
+    color: #444;
+  }
+
+  .green {
+    border-left: 4px solid #2ecc71;
+  }
+
+  .green .title {
+    color: #49af45;
+  }
+
+  .orange {
+    border-left: 4px solid #e67e22;
+  }
+
+  .orange .title {
+    color: #d97706;
+  }
+
+  .blue {
+    border-left: 4px solid #3B82F6;
+  }
+
+  .blue .title {
+    color: #3B82F6;
+  }
+
+  .purple {
+    border-left: 4px solid #8E54E9;
+  }
+
+  .purple .title {
+    color: #8E54E9;
+  }
+</style>
