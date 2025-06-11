@@ -1,0 +1,152 @@
+---
+
+---
+
+<footer class="footer section">
+  <div class="container">
+    <div class="footer__content">
+      
+      <div class="footer__logo">
+        <a href="#" class="footer__logo--link">Red Amazonía Libre</a>
+
+        <p class="footer__logo--description">sigue nuestras redes sociales</p>
+
+        <div class="footer__socials">
+          <a href="#" class="footer__social--link">
+            <span class="ic--outline-facebook"></span>
+          </a>
+
+          <a href="#" class="footer__social--link">
+            <span class="mdi--instagram"></span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer__contact">
+        <h3>Información de Contacto</h3>
+
+        <a
+          href="mailto:contacto@redamazonlibre.org"
+          class="footer__contact--link"
+        >
+          <span class="material-symbols--mail-outline"></span>
+          contacto@redamazonlibre.org
+        </a>
+      </div>
+
+      <div class="footer__cta">
+         <h3 class="footer__cta--title">Súmate al llamado de la Amazonía</h3>
+
+         <form action="#" class="footer__cta--form">
+            <div class="footer__cta--group">
+                <input type="email" placeholder="Correo electrónico" />
+                <button type="submit">Suscríbete</button>
+            </div>
+            <p class="footer__cta--description">
+                Recibe noticias y acciones por una Amazonía libre.
+            </p>
+         </form>
+      </div>
+
+    </div>
+    <div class="footer__copy">
+      <p class="footer__copy--text">&copy; {new Date().getFullYear()} Red Amazonía Libre. Diseñado por <a class="footer__copy--link" href="https://codigocreativo.netlify.app/" target="_blank">Código Creativo</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<style>
+    .footer{
+        background-color: #065F46;
+        color: white;
+        padding-bottom: 1rem;
+    }
+    .footer__content{
+        display: grid;
+        gap: 2rem;
+    }
+    .footer__logo--link{
+        font-weight: 700;
+        font-size: var(--font-lg);
+        margin-bottom: 0m;
+        display: block;
+    }
+    .footer__logo--description{
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .footer__socials{
+        display: flex;
+        gap: 1rem;
+    }
+    .footer__social--link span{
+        color: white;
+        width: 2rem;
+        height: 2rem;
+    }
+    .footer__contact--link{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .footer__cta--title{
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    .footer__cta--group{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer__cta--group input{
+        padding: 6px 8px;
+        margin: 0;
+        width: 60%;
+        background-color: white;
+        border: none;
+        border-radius: 0.2rem 0 0 0.2rem;
+    }
+    .footer__cta--group input:focus{
+        outline: none;
+    }
+
+    .footer__cta--group button{
+        padding: 6px 8px;
+        margin: 0;
+        width: 40%;
+        border: none;
+        background-color: var(--color-primary);
+        color: white;
+        border-radius: 0 0.2rem 0.2rem 0;
+    }
+    .footer__cta--group button:hover{
+        cursor: pointer;
+    }
+    .footer__cta--description{
+        font-size: 0.8rem;
+        margin-top: 0;
+        color: #cfcfcf;
+    }
+    .footer__copy--text{
+        text-align: center;
+        border-top:thin dashed #cfcfcf;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        font-size: 0.8rem;
+    }
+    .footer__copy--link{
+        color: white;
+        text-decoration: underline;
+    }
+        @media (min-width: 768px) {
+        .footer__content{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 1024px) {
+        .footer__content{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>

@@ -1,5 +1,5 @@
 ---
-import Brands from "../shared/Brands.astro";
+// import Brands from "../shared/Brands.astro";
 ---
 
 <section id="home" class="home section">
@@ -35,13 +35,12 @@ import Brands from "../shared/Brands.astro";
       </div>
     </div>
   </div>
-  <Brands />
+  <!-- <Brands /> -->
 </section>
 
 <style>
   .home {
     background-color: var(--color-bg2);
-    padding-bottom: 0;
   }
   .hero__content {
     display: grid;
@@ -53,6 +52,7 @@ import Brands from "../shared/Brands.astro";
     grid-template-rows: repeat(4, 1fr);
     gap: 10px;
     aspect-ratio: 3 / 2;
+    wi
   }
   .hero__image--img {
     width: 100%;
@@ -76,16 +76,20 @@ import Brands from "../shared/Brands.astro";
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
+    margin-bottom: 4rem;
   }
 
   @media (min-width: 1024px) {
     .home {
       padding-top: 8rem;
-      padding-bottom: 0;
     }
     .hero__content {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+    }
+    .hero__image {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
     }
   }
 </style>

@@ -1,8 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Inscribete from '../components/forms/Inscribete.astro';
+import Layout from "../layouts/Layout.astro";
+import Inscribete from "../components/forms/Inscribete.astro";
 ---
 
 <Layout title="Únete a Red Amazonía Libre">
+  <section class="section container">
+    <h1 class="title">Únete a Red Amazonía Libre</h1>
+    <p class="description">
+      Únete para apoyar a los jóvenes que defienden la
+      Amazonía.
+    </p>
     <Inscribete />
+  </section>
 </Layout>
+
+<style>
+  .title {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .description{
+    text-align: center;
+    margin-bottom: 0;
+    font-size: var(--font-sm);
+  }
+</style>
+
+
